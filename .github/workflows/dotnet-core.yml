@@ -20,11 +20,8 @@ jobs:
     - name: show path
       run: pwd
     - name: Install dependencies
-      run: dotnet restore Volo.Abp.sln
-      working-directory: .\framework
+      run: dotnet restore .\framework\Volo.Abp.sln 
     - name: Build
-      run: dotnet build Volo.Abp.sln --configuration Release --no-restore
-      working-directory: .\framework
+      run: dotnet build .\framework\Volo.Abp.sln  --configuration Release --no-restore 
     - name: Test
-      run: dotnet test Volo.Abp.sln --no-restore --verbosity normal
-      working-directory: .\framework
+      run: dotnet test .\framework\Volo.Abp.sln  --no-restore --verbosity normal 
