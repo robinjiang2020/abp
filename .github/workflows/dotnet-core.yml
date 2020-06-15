@@ -2,17 +2,9 @@ name: .NET Core
 
 on:
   push:
-    branches: [ master,dev ]
-    paths:
-      - "framework/**"
-      - "modules/**"
-      - "templates/**"
+    branches: [ master,dev ] 
   pull_request:
-    branches: [ master ]
-    paths:
-      - "framework/**"
-      - "modules/**"
-      - "templates/**"
+    branches: [ master ] 
 
 jobs:
   build:
