@@ -19,12 +19,18 @@ jobs:
         dotnet-version: 3.1.101
     - name: show path
       run: pwd
+      
     - name: Install dependencies
-      run: pwd
+      run: |
+           pwd
            dotnet restore .\framework\Volo.Abp.sln 
+           
     - name: Build
-      run: pwd
+      run: |
+           pwd
            dotnet build .\framework\Volo.Abp.sln  --configuration Release --no-restore 
+           
     - name: Test
-      run: pwd
-          dotnet test .\framework\Volo.Abp.sln  --no-restore --verbosity normal 
+      run: |
+           pwd
+           dotnet test .\framework\Volo.Abp.sln  --no-restore --verbosity normal 
