@@ -3,8 +3,16 @@ name: .NET Core
 on:
   push:
     branches: [ master,dev ]
+    paths:
+      - "framework/**"
+      - "modules/**"
+      - "templates/**"
   pull_request:
     branches: [ master ]
+    paths:
+      - "framework/**"
+      - "modules/**"
+      - "templates/**"
 
 jobs:
   build:
@@ -20,6 +28,8 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build ../../framework/Volo.Abp.sln --configuration Release --no-restore
+      run: dotnet build Volo.Abp.sln --configuration Release --no-restore
+      working-directory: .\framework
     - name: Test
-      run: dotnet test ../../framework/Volo.Abp.sln --no-restore --verbosity normal
+      run: dotnet test Volo.Abp.sln --no-restore --verbosity normal
+      working-directory: .\framework
