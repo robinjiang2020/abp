@@ -23,6 +23,8 @@ jobs:
       run: pwd
            dotnet restore .\framework\Volo.Abp.sln 
     - name: Build
-      run: dotnet build .\framework\Volo.Abp.sln  --configuration Release --no-restore 
+      run: pwd
+           dotnet build .\framework\Volo.Abp.sln  --configuration Release --no-restore 
     - name: Test
-      run: dotnet test .\framework\Volo.Abp.sln  --no-restore --verbosity normal 
+      run: pwd
+          dotnet test .\framework\Volo.Abp.sln  --no-restore --verbosity normal 
